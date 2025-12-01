@@ -1,0 +1,28 @@
+name: Monitor Orange
+
+on:
+  schedule:
+    # Uruchamiaj co 15 minut. 
+    # Uwaga: GitHub nie gwarantuje idealnej punktualności, może być +/- parę minut opóźnienia.
+    - cron: '*/15 * * * *'
+  workflow_dispatch: # Pozwala uruchomić ręcznie przyciskiem "Run workflow"
+
+jobs:
+  check-stock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pobierz kod repozytorium
+        uses: actions/checkout@v3
+
+      - name: Ustaw Pythona
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Zainstaluj biblioteki
+        run: pip install -r requirements.txt
+
+      - name: Uruchom Bota
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python main.py
