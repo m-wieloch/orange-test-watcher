@@ -25,4 +25,5 @@ jobs:
       - name: Uruchom Bota
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          PRODUCT_URL: ${{ secrets.PRODUCT_URL }}
         run: python main.py
