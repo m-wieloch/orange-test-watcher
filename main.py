@@ -10,7 +10,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
-from datetime import datetime, timezone
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 # --- KONFIGURACJA ---
 
@@ -27,14 +28,14 @@ def send_discord_alert():
         return
 
     data = {
-        "content": "@everyone 🚨 **ZNALAZŁEM IPHONE'A W ORANGE!** 🚨",
+        "content": "@everyone 🚨 **ZNALAZŁEM PRODUKT W ORANGE!** 🚨",
         "embeds": [{
             "title": "Kliknij, aby kupić!",
             "url": PRODUCT_URL,
             "color": 3066993,
             "fields": [
                 {"name": "Status", "value": "Przycisk 'Do koszyka' wykryty."},
-                {"name": "Czas (UTC)", "value": datetime.now(timezone.utc).strftime('%H:%M:%S')}
+                {"name": "Czas (UTC)", "value": datetime.now(ZoneInfo("Europe/Warsaw")).strftime('%H:%M:%S')}
             ]
         }]
     }
