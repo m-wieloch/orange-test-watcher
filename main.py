@@ -17,8 +17,6 @@ from zoneinfo import ZoneInfo
 
 # Pobieramy produkt z bezpiecznych ustawień GitHuba (Secrets)
 PRODUCT_URL = os.environ.get("PRODUCT_URL")
-# PRODUCT_URL = "https://www.orange.pl/esklep/smartfony/apple/iphone-17-pro-max-512gb-5g?variant=MOB_CPO_DEV_IPHONE17PM_512_5G_ES_SILVER&typ-oferty=SIMFREE&typ-procesu=SALE_OF_GOODS&id-oferty=DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS&"
-# PRODUCT_URL = "https://www.orange.pl/esklep/smartfony/samsung/samsung-galaxy-s25-5g-12-512-gb?variant=MOB_CPO_DEV_SAMS_S25_512_5G_ES_BLUE&typ-oferty=SIMFREE_INST&typ-procesu=INSTALMENT_SALES_OF_GOODS&id-oferty=TANTO_B2B_249414$MOB_CPO_7052_5722_AC_249414&market=B2B&snrai_campaign=7mV5mj3YuDjs&snrai_id=0c9bc913-841e-40bc-8cb0-f39bf18075bc&undefined"
 
 # Pobieramy webhook z bezpiecznych ustawień GitHuba (Secrets)
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
@@ -29,7 +27,7 @@ def send_discord_alert():
         return
 
     data = {
-        "content": "@everyone 🚨 **ZNALAZŁEM PRODUKT W ORANGE!** 🚨",
+        "content": "@everyone 🚨 **PRODUKT DOSTĘPNY W ORANGE!** 🚨",
         "embeds": [{
             "title": "Kliknij, aby kupić!",
             "url": PRODUCT_URL,
