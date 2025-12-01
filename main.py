@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
-from datetime import datetime
+from datetime import datetime, timezone
 
 # --- KONFIGURACJA ---
 
@@ -33,7 +33,7 @@ def send_discord_alert():
             "color": 3066993,
             "fields": [
                 {"name": "Status", "value": "Przycisk 'Do koszyka' wykryty."},
-                {"name": "Czas (UTC)", "value": datetime.utcnow().strftime('%H:%M:%S')}
+                {"name": "Czas (UTC)", "value": datetime.now(timezone.utc).strftime('%H:%M:%S')}
             ]
         }]
     }
