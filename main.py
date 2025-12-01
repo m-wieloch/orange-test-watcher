@@ -15,8 +15,8 @@ from datetime import datetime
 # --- KONFIGURACJA ---
 
 # Pobieramy produkt z bezpiecznych ustawień GitHuba (Secrets)
-# PRODUCT_URL = "https://www.orange.pl/esklep/smartfony/apple/iphone-17-pro-max-512gb-5g?variant=MOB_CPO_DEV_IPHONE17PM_512_5G_ES_SILVER&typ-oferty=SIMFREE&typ-procesu=SALE_OF_GOODS&id-oferty=DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS&"
-PRODUCT_URL = "https://www.orange.pl/esklep/smartfony/apple/iphone-17-pro-max-256gb-5g?variant=MOB_CPO_DEV_IPHONE17PM_256_5G_ES_BLUE&typ-oferty=SIMFREE&typ-procesu=SALE_OF_GOODS&id-oferty=DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS&"
+PRODUCT_URL = "https://www.orange.pl/esklep/smartfony/apple/iphone-17-pro-max-512gb-5g?variant=MOB_CPO_DEV_IPHONE17PM_512_5G_ES_SILVER&typ-oferty=SIMFREE&typ-procesu=SALE_OF_GOODS&id-oferty=DEFAULT_SALES_OF_GOODS_PROPOSITION$MOB_CPO_SALES_OF_GOODS&"
+
 # Pobieramy webhook z bezpiecznych ustawień GitHuba (Secrets)
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
